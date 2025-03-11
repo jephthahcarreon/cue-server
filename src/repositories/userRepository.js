@@ -1,4 +1,4 @@
-const executeQuery = require("../database/database");
+const { executeQuery, sql } = require("../database/database");
 
 class UserRepository {
     async getUsers(){
@@ -12,10 +12,10 @@ class UserRepository {
                 C.NAME customerName,
                 R.ROLE_ID roleId,
                 R.NAME roleName
-            FROM USER U
-            LEFT JOIN CUSTOMER_USER_MAP CU ON U.USER_ID = CU.USER_ID
-            LEFT JOIN CUSTOMER C ON C.CUSTOMER_ID = CU.CUSTOMER_ID
-            LEFT JOIN ROLE R ON R.ROLE_ID = CU.ROLE_ID
+            FROM dbo.[USER] U
+            LEFT JOIN dbo.[CUSTOMER_USER_MAP] CU ON U.USER_ID = CU.USER_ID
+            LEFT JOIN dbo.[CUSTOMER] C ON C.CUSTOMER_ID = CU.CUSTOMER_ID
+            LEFT JOIN dbo.[ROLE] R ON R.ROLE_ID = CU.ROLE_ID
         `
 
         const raw = await executeQuery(query);

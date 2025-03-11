@@ -33,4 +33,4 @@ async function executeQuery(query, params = []) {
     return result.recordset;
 }
 
-module.exports = executeQuery();
+module.exports = { executeQuery, sql };
