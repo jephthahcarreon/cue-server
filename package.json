@@ -1,0 +1,16 @@
+{
+  "name": "cue-server",
+  "version": "1.0.0",
+  "description": "CUE Server",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --env-file=./src/config/dev.env server.js"
+  },
+  "author": "Jephthah Carreon",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mssql": "^11.0.1"
+  }
+}
